@@ -19,15 +19,5 @@ pydantic
 python-dotenv
 beautifulsoup4
 requests
-youtube-transcript-api
-pytube
-
-requests_html
-faster-whisper
-yt-dlp
-lxml_html_clean
-playwright
 sentence-transformers
 
- pydub
- 
