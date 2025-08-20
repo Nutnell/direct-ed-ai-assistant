@@ -1,23 +1,33 @@
-# LangChain Core
 langchain
 langchain-core
 langchain-cli
 langchain-community
+langchain_chroma
 
-# LLM Integrations
+
 langchain-openai
 openai
 
-# LangServe for API deployment
+
 langserve
 fastapi
 uvicorn
-
-# Vector Database
 chromadb
 
-# Data Handling & Environment
+
 pydantic
 python-dotenv
 beautifulsoup4
 requests
+youtube-transcript-api
+pytube
+
+requests_html
+faster-whisper
+yt-dlp
+lxml_html_clean
+playwright
+sentence-transformers
+
+ pydub
+ 

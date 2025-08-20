@@ -1,0 +1,268 @@
+# Section One: LLMOps Fundamentals
+
+---
+
+## 🎭 **The Case of the Malfunctioning Chatbot: Why LLMOps Exists**
+
+Picture this:
+
+You’re a new developer at a startup, and after months of hard work, your team launches a slick customer support chatbot powered by a large language model (LLM) like GPT. Early feedback is glowing, customers marvel at how helpful (and human) your bot seems. You relax a little. Maybe you even brag on social media.
+
+But a few weeks later, trouble brews:
+
+- The chatbot starts giving confusing answers, even to easy questions.
+- During peak hours, the bot becomes painfully slow—or sometimes just crashes.
+- One day, it blurts out a customer’s phone number in a reply. (Yikes.)
+- The product manager is furious. The customers are even more furious.
+
+**What happened?**
+
+You (and your team) focused on **building** the chatbot, but no one thought much about what happens after it goes live:
+
+- How do you track if it’s still working well?
+- How do you catch dangerous mistakes, like privacy leaks or weird answers?
+- What if you want to update the model safely without breaking things?
+- How can you roll back fast if an update fails?
+
+**This is where *LLMOps* comes in!**
+
+LLMOps is the “behind-the-scenes” set of skills and systems that keep your LLM-powered products healthy, safe, reliable, and always improving.
+
+---
+
+## 💡 Topic: What is LLMOPS
+
+**LLMOps,** which stands for *Large Language Model Operations,* is everything that happens *after* your smart assistant (or chatbot, or AI tool) is launched.
+
+Think of it as a toolkit and set of routines that help developers:
+
+- **Deploy** the model so that users can use it on their devices or online.
+- **Monitor** its performance, catching slow responses, unusual answers, or outright errors before they cause issues.
+- **Evaluate** how well it’s doing by checking its answers against real-life questions, making sure it’s not going off-track.
+- **Version** the app and the model, so if a new update breaks something, you can quickly roll back to the version that worked.
+- **Collect feedback** from real users just like when you rate an app or report a bug, so the model can be improved and retrained to handle your needs even better.
+
+Think of LLMOps as the app’s “support team” working invisibly in the background: patching bugs, releasing updates, keeping your data safe, and making sure the smart assistant doesn’t suddenly start acting strange.
+
+Without LLMOps, even the best AI app can become unreliable, confusing, or even risky. Your chatbot/assistant might stop being helpful, or worse, it might share personal info with the wrong people or give dangerously bad advice.
+
+In the broader context, LLMOps is similar to DevOps (which ensures regular software runs smoothly) or MLOps (for any type of machine learning model). But LLMOps is tuned specifically for the quirks and challenges of large language models, which can be creative but also unpredictable when handling real-world conversations.
+
+In short, **LLMOps is about keeping your AI assistant helpful, safe, and up-to-date long after launch day so you can trust it whenever you need it.**
+
+## 📋 **Instructions**
+
+1. **Step One:** Watch the video below and take the first part of the LLMOps master's course
+    
+    https://youtu.be/jhKq8WQmgH4
+    
+    <aside>
+    ⛔
+    
+    **Note: You are required to complete ALL chapters before moving to the next part!** 
+    
+    - **⭐ Course Content ⭐ (click to expand)**
+        
+        The course is organized as follows 👇
+        
+        - [ ]  [Watch the Introduction (00:00)](https://www.youtube.com/watch?v=jhKq8WQmgH4)
+        - [ ]  [Review the Agenda (00:27)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=27s)
+        - [ ]  [Understand what LLMOps is (02:19)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=139s)
+        - [ ]  [Learn about LLMOps vs MLOps Differences (10:55)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=655s)
+        - [ ]  [Deep dive into MLOps vs LLMOps (27:59)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=1679s)
+        - [ ]  [Learn about Recurrent Neural Networks (RNN) (41:04)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=2464s)
+        - [ ]  [Get an overview of Large Language Models (45:57)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=2757s)
+        - [ ]  [Identify key challenges in LLMOps (50:19)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=3019s)
+        - [ ]  [Understand the LLM Ops Life Cycle (53:54)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=3234s)
+        - [ ]  [Learn the core components of the LLMOps Pipeline (59:37)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=3577s)
+        - [ ]  [Understand the Encoder Layer in Transformers (1:22:46)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=4966s)
+        - [ ]  [Explore the Self Attention Mechanism (1:25:59)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=5159s)
+        - [ ]  [Learn about Positional Encoding in Transformers (1:32:10)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=5530s)
+        - [ ]  [Understand Residual Blocks (1:33:49)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=5629s)
+        - [ ]  [Review Large Language Model (LLM) Overview (1:38:14)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=5894s)
+        - [ ]  [Learn about Generating Embeddings (1:50:55)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=6655s)
+        - [ ]  [Explore Advanced Embedding Generation with Transformers (1:57:33)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=7053s)
+        - [ ]  [Dive into the Attention Mechanism in Depth (2:02:40)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=7360s)
+        - [ ]  [Understand the Context Window in LLMs (2:13:44)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=8024s)
+        - [ ]  [Introduction to Prompt Engineering (2:16:55)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=8215s)
+        - [ ]  [Best Practices for Prompt Engineering (2:27:29)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=8849s)
+        - [ ]  [User Prompt vs System Prompt (2:30:42)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=9042s)
+        - [ ]  [Open Source vs Proprietary LLMs (2:43:38)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=9818s)
+        - [ ]  [Limitations of LLMs (2:53:12)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=10392s)
+        - [ ]  [Introduction to RAG (2:54:55)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=10495s)
+        - [ ]  [How RAG Works (2:56:39)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=10599s)
+        - [ ]  [Creating Vector Database with ChromaDB (3:02:20)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=10940s)
+        - [ ]  [Connecting RAG to Vector Database (3:04:37)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=11077s)
+        - [ ]  [What is Langchain? (3:08:29)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=11309s)
+        - [ ]  [Storing Unstructured Data (3:42:49)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=13369s)
+        - [ ]  [Generating Embeddings Overview (3:45:36)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=13536s)
+        - [ ]  [Intro to Environment Setup (4:34:44)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=16484s)
+        - [ ]  [Installing Required Packages (4:35:21)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=16521s)
+        - [ ]  [Downloading Data for Project (4:37:52)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=16672s)
+        - [ ]  [Similarity Search Techniques (5:02:29)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=18149s)
+        - [ ]  [Using LLM for Specific Outputs (5:06:25)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=18385s)
+        - [ ]  [Implementing Retriever QA Chain (5:08:45)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=18525s)
+        - [ ]  [What is Langsmith? (5:13:40)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=18820s)
+        - [ ]  [Creating API Key for Langsmith (5:17:12)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=19032s)
+        - [ ]  [Creating a Langsmith Project (5:20:24)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=19224s)
+        - [ ]  [Creating ChatPromptTemplate in Langsmith (5:22:11)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=19331s)
+        - [ ]  [Running Projects in Langsmith (5:23:26)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=19406s)
+        - [ ]  [Langsmith Monitor Overview (5:26:55)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=19615s)
+        - [ ]  [Introduction to LangServe (5:30:15)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=19815s)
+        - [ ]  [Using LangServe Effectively (5:37:12)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=20232s)
+        - [ ]  [Creating REST API with LangServe (5:37:23)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=20243s)
+        - [ ]  [Testing REST API with Python SDK (5:42:26)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=20546s)
+        - [ ]  [Hugging Face Inference Endpoints (5:49:19)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=20959s)
+        - [ ]  [Understanding Schema in API (6:00:00)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=21600s)
+        - [ ]  [Setting Up MLflow Server on AWS EC2 (6:05:12)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=21912s)
+        - [ ]  [Demo of MLflow Experiment Tracking (6:17:35)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=22655s)
+        - [ ]  [Setting Up MLflow on Google Colab (6:18:59)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=22739s)
+        - [ ]  [Overview of MLflow Experiment Tracking (6:26:29)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=23189s)
+        - [ ]  [High Level Architecture for Deployment (6:55:29)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=24929s)
+        - [ ]  [Deployment Steps Overview (6:58:03)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=25083s)
+        - [ ]  [Creating Docker File (6:59:44)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=25184s)
+        - [ ]  [GitHub Workflows for CICD (7:00:25)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=25225s)
+        - [ ]  [Creating IAM User for Deployment (7:00:40)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=25240s)
+        - [ ]  [Creating ECR Repository Overview (7:02:38)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=25358s)
+        - [ ]  [Setting Up EC2 Machine (7:03:44)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=25424s)
+        - [ ]  [Continuous Integration Overview (7:13:02)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=25982s)
+        - [ ]  [Accessing Deployed Chatbot (7:15:04)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=26104s)
+        - [ ]  [Cleaning Up Resources (7:15:41)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=26141s)
+        - [ ]  [Wrapping Up the Series (7:16:57)](https://www.youtube.com/watch?v=jhKq8WQmgH4&t=26217s)
+    </aside>
+    
+2. **Step Two:** Watch the video below and take the first part of the LLMOps master's course
+    
+    https://youtu.be/lqV4qT8klFg
+    
+    <aside>
+    ⛔
+    
+    **Note: You are required to complete ALL CHAPTERS before moving to the next section!** 
+    
+    - **⭐ Course Content ⭐ (click to expand)**
+        
+        The course is organized as follows 👇
+        
+        - [ ]  [Data Acquisition Strategy (00:00)](https://www.youtube.com/watch?v=lqV4qT8klFg)
+        - [ ]  [Data Augmentation Techniques (03:23)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=203s)
+        - [ ]  [Text Data Scraping Methods (07:29)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=449s)
+        - [ ]  [URL Removal Techniques (32:35)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=1955s)
+        - [ ]  [Punctuation Removal Methods (33:57)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=2037s)
+        - [ ]  [Chat Conversation Word Processing (36:05)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=2165s)
+        - [ ]  [Spelling Correction Techniques (37:37)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=2257s)
+        - [ ]  [Stop Words Removal (38:23)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=2303s)
+        - [ ]  [Emoji Handling in Text (42:00)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=2520s)
+        - [ ]  [Vector Database Overview (56:15)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=3375s)
+        - [ ]  [Reformatting Data for LLM (1:41:38)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=6098s)
+        - [ ]  [Performing Parameter Efficient Fine Tuning (1:42:25)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=6145s)
+        - [ ]  [Training the Model (1:44:46)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=6286s)
+        - [ ]  [Saving Model to Hugging Face (1:46:11)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=6371s)
+        - [ ]  [Understanding RAG (1:51:55)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=6715s)
+        - [ ]  [DataLoader Overview (1:55:26)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=6926s)
+        - [ ]  [Splitter Techniques (1:56:20)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=6980s)
+        - [ ]  [Loading Custom Data in Lang8 (1:59:45)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=7185s)
+        - [ ]  [Data Loader in Lang8 (2:05:39)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=7539s)
+        - [ ]  [Loading TXT Data (2:07:24)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=7644s)
+        - [ ]  [Loading CSV Data (2:10:15)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=7815s)
+        - [ ]  [Overcoming Input Limit and Cost Issues (2:27:13)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=8833s)
+        - [ ]  [Understanding Retriever Augmented Generation (RAG) (2:30:24)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=9024s)
+        - [ ]  [Overcoming Context Window Limitations (2:36:06)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=9366s)
+        - [ ]  [Understanding Text Splitting (2:38:42)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=9522s)
+        - [ ]  [Recursive Character Text Splitter (2:52:38)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=10358s)
+        - [ ]  [Creating Lang Chain (3:24:44)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=12284s)
+        - [ ]  [Lang Chain vs Lang Expression Language (3:30:25)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=12625s)
+        - [ ]  [Understanding Model Inference (3:31:58)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=12718s)
+        - [ ]  [Code Walkthrough (4:15:52)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=15352s)
+        - [ ]  [Wrapping Model for MLflow (4:18:04)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=15484s)
+        - [ ]  [Evaluating the Model (4:19:44)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=15584s)
+        - [ ]  [Tracking Metrics in DVC (4:24:46)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=15886s)
+        - [ ]  [Issues with Large Language Models (4:49:15)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=17355s)
+        - [ ]  [Recap of the Session (4:55:49)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=17749s)
+        - [ ]  [Cost of Running Models on AWS (4:58:36)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=17916s)
+        - [ ]  [Understanding MLOps (5:04:03)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=18243s)
+        - [ ]  [Introduction to Vertex AI (5:08:55)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=18535s)
+        - [ ]  [Vertex AI: Model Garden Overview (5:12:20)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=18740s)
+        - [ ]  [Accessing Model Garden from GCP Console (5:15:50)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=18950s)
+        - [ ]  [Vertex AI Services Overview (5:18:49)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=19129s)
+        - [ ]  [Setting Up Vert.x AI Locally (5:47:34)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=20854s)
+        - [ ]  [Installing GCP CLI (5:49:27)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=20967s)
+        - [ ]  [Installing Required Packages (5:50:57)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=21057s)
+        - [ ]  [GCP Configuration Steps (5:51:36)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=21096s)
+        - [ ]  [RAG Application with Vert.x AI (5:59:04)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=21544s)
+        - [ ]  [Running the Code (6:00:32)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=21632s)
+        - [ ]  [Initializing Variables (6:04:56)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=21896s)
+        - [ ]  [Extracting Sentences from PDF (6:07:20)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=22040s)
+        - [ ]  [Generating and Saving Embeddings (6:07:48)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=22068s)
+        - [ ]  [Implementing LLM-Powered Chatbot with Verta.ai (6:15:24)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=22524s)
+        - [ ]  [Fine-tuning on Vertex AI (6:19:28)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=22768s)
+        - [ ]  [Fine-tuning Steps on Vertex AI (6:20:25)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=22825s)
+        - [ ]  [Training Text Summarization Model (6:24:06)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=23046s)
+        - [ ]  [Using the Trained Text Summarization Model (6:30:46)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=23446s)
+        - [ ]  [Understanding AWS Bedrock (6:32:33)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=23553s)
+        - [ ]  [Accessing Foundation Model with Python (6:38:13)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=23893s)
+        - [ ]  [Creating AWS IAM User (6:40:16)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=24016s)
+        - [ ]  [Setting AWS Credentials (6:41:22)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=24082s)
+        - [ ]  [Coding Bedrock API Client (6:43:36)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=24216s)
+        - [ ]  [Creating Streamlit UI (6:46:29)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=24389s)
+        - [ ]  [Personal Productivity Assistant Overview (6:50:47)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=24647s)
+        - [ ]  [System Architecture Overview (6:54:09)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=24849s)
+        - [ ]  [Project Folder Structure (6:57:10)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=25030s)
+        - [ ]  [Creating GitHub Repository (6:59:37)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=25177s)
+        - [ ]  [Environment Setup Steps (7:00:51)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=25251s)
+        - [ ]  [Automatically Creating Folder Structure (7:02:05)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=25325s)
+        - [ ]  [Deploying Project on AWS with CI/CD (7:28:49)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=26929s)
+        - [ ]  [Understanding CI/CD (7:32:20)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=27140s)
+        - [ ]  [CI/CD Pipeline Architecture Overview (7:32:48)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=27168s)
+        - [ ]  [Deployment Architecture Overview (7:38:20)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=27500s)
+        - [ ]  [Deployment Steps Explained (7:40:00)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=27600s)
+        - [ ]  [CI/CD Execution: Continuous Deployment (7:57:13)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=28633s)
+        - [ ]  [Accessing Deployed Application (7:59:21)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=28761s)
+        - [ ]  [Final Output Summary (8:00:39)](https://www.youtube.com/watch?v=lqV4qT8klFg&t=28839s)
+    </aside>
+    
+
+## 🧠 **Exercise / Project**
+
+1. Please visit this page to access the project for this section 👇
+    
+    [**Project: LLMOps Foundations**](https://www.notion.so/Project-LLMOps-Foundations-24b52c038379817ba264f7b7f223ba81?pvs=21)
+    
+
+## :icons8_people_256: Peer Review Activity
+
+1. After completing the Exercise found above, head over to the peer review link below 👇 and give helpful feedback to your classmates and receive some too!
+    
+    [Peer Review Activity: LLMOps foundations](https://www.notion.so/Peer-Review-Activity-LLMOps-foundations-24b52c03837981ebb57ec297f52dda1e?pvs=21)
+    
+
+## 📚 **Additional Resources**
+
+- [DataCamp – LLMOps Essentials: A Practical Guide to Operationalizing Large Language Models](https://www.datacamp.com/blog/llmops-essentials-guide-to-operationalizing-large-language-models)
+    
+    *(Covers the full LLMOps lifecycle: prompt handling, inference, deployment, monitoring, CI/CD, and more.)*
+    
+- [Signoz – LLMOps: Mastering Large Language Model Operations](https://signoz.io/guides/llmops/)
+    
+    *(Step-by-step guidance on deployment, monitoring, tools, scaling, and ethical challenges in LLMOps.)*
+    
+- [Cyces – The A to Z of LLMOps: Breakdown for Beginners](https://cyces.co/blog/llmops-explained)
+    
+    *(Beginner-friendly overview of LLMOps components, including data, training, deployment, and monitoring.)*
+    
+- [Analytics Vidhya – A Beginner’s Guide to LLMOps for Machine Learning Engineering](https://www.analyticsvidhya.com/blog/2023/09/llmops-for-machine-learning-engineering/)
+    
+    *(Explains the LLMOps lifecycle, from base models to fine-tuning, deployment, and monitoring.)*
+    
+- [Code-B – Introduction to LLMOps for Machine Learning: Beginner’s Guide](https://code-b.dev/blog/llmops-for-machine-learning)
+    
+    *(Introductory explanation of LLMOps, practical tools, pipelines, monitoring, and responsible AI.)*
+    
+- [Arize AI – Introduction: Fundamentals of LLMOps (Self-Guided Course)](https://arize.com/blog-course/introduction-fundamentals/)
+    
+    *(Modular course covering LLMOps basics: evaluation, observability, prompt engineering, and RAG.)*
+    
+
+## 😎 Meme Break
+
+---
