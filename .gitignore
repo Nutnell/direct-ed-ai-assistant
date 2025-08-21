@@ -10,3 +10,5 @@ venv/
 # IDE
 .idea/
 .vscode
+
+fine_tuning\results

@@ -7,7 +7,7 @@ from langserve import add_routes
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
-from app.chains.router import router_chain_with_history
+from app.chains.router import educational_assistant_chain
 
 load_dotenv()
 
@@ -43,10 +43,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Add LangServe Routes
+# LangServe Routes
 add_routes(
     app,
-    router_chain_with_history,
+    educational_assistant_chain,
     path="/chat",
 )
 

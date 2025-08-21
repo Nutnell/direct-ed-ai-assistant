@@ -1,9 +1,8 @@
 # app/schemas/api_models.py
 
 from pydantic import BaseModel, Field
-from typing import List, Literal
+from typing import List, Literal, Optional
 
-# This defines the structure of the input for our API
 class ChatInput(BaseModel):
     input: str = Field(
         ...,
@@ -21,12 +20,11 @@ class ChatInput(BaseModel):
         examples=["tutoring"]
     )
 
-# This defines the structure of a single source document
 class Source(BaseModel):
     source: str = Field(..., description="The URL of the source document.")
     name: str = Field(..., description="The name of the source (e.g., 'DirectEd Curriculum').")
 
-# This defines the structure of the output from our API
 class ChatOutput(BaseModel):
     answer: str = Field(..., description="The AI-generated answer or content.")
-    sources: List[Source] = Field(..., description="A list of source documents used for the answer.")
+    # The sources field is now optional
+    sources: Optional[List[Source]] = Field(None, description="A list of source documents used for the answer.")

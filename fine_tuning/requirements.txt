@@ -1,0 +1,10 @@
+# fine_tuning/requirements.txt
+
+torch
+datasets
+transformers
+peft
+trl
+bitsandbytes
+accelerate
+huggingface_hub
