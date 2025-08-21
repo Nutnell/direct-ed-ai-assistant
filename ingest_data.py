@@ -10,17 +10,16 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# ------------------- Setup -------------------
 load_dotenv()
 print("✅ Environment variables loaded.")
 
-# --- Configuration ---
+# Configuration
 DATA_SOURCES_PATH = "app/data/gen_ai_track/module_1_llmops_fundamentals"
 VECTOR_STORE_PATH = "app/vector_store"
 SUPPLEMENTARY_URL = "https://signoz.io/guides/llmops/"
 SUPPLEMENTARY_FILE_PATH = os.path.join(DATA_SOURCES_PATH, "2_signoz_article.txt")
 
-# --- Models & Vector Store ---
+# Models & Vector Store
 print("Loading open-source embedding model 'all-MiniLM-L6-v2'...")
 embedding_function = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
@@ -31,7 +30,7 @@ vector_store = Chroma(
 print("✅ Setup complete. Database and open-source model are ready.")
 
 
-# ------------------- Helper Functions -------------------
+# Helper Functions
 
 def scrape_and_save(url: str, file_path: str):
     """Scrape SigNoz LLMOps guide and overwrite local file."""
@@ -83,8 +82,7 @@ def process_and_embed_module(module_path: str):
             print("⚠️ no text chunks found—skipping")
             continue
 
-        # --- THE FIX IS HERE ---
-        # We now correctly assign the Notion URL to the DirectEd content.
+        # Determine source metadata
         if "1_directed" in fname:
             source_name = "DirectEd Curriculum"
             source_url = "https://www.notion.so/directed/Section-One-LLMOps-Fundamentals-24b52c0383798118b01aecf774c95355"

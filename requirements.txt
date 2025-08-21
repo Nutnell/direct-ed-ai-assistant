@@ -1,23 +1,24 @@
+# requirements.txt
+
+# Core Application & API (Stable, available versions)
+fastapi==0.111.0
+pydantic==2.8.2
+uvicorn==0.30.1
+python-dotenv==1.0.1
+
+# LangChain Suite (Pinning to the latest available version from your log)
+langserve==0.3.1
+
+# Let pip find the best compatible versions for the rest
 langchain
 langchain-core
-langchain-cli
 langchain-community
-langchain_chroma
-
-
 langchain-openai
-openai
+langchain-chroma
+langchain-huggingface
 
-
-langserve
-fastapi
-uvicorn
-chromadb
-
-
-pydantic
-python-dotenv
-beautifulsoup4
-requests
+# Other Dependencies
 sentence-transformers
-
+chromadb
+requests
+beautifulsoup4
