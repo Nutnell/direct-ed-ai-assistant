@@ -1,93 +1,74 @@
-# fine_tuning/fine_tune.py
-
-import os
 import torch
 from datasets import load_dataset
-from transformers import (
-    AutoModelForCausalLM,
-    AutoTokenizer,
-    TrainingArguments,
-)
-from peft import LoraConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
+from peft import PeftModel, LoraConfig
 from trl import SFTTrainer
 
+# --- Configuration ---
 base_model_name = "unsloth/llama-3-8b-Instruct-bnb-4bit"
-output_dir = "fine_tuning/results/llama-3-8b-instruct-direct-ed"
-dataset_path = "fine_tuning/dataset.jsonl"
+adapter_model_id = "Nutnell/DirectEd-AI"  # Your adapter on the Hub
+new_dataset_path = "new_training_data.jsonl"  # Path to your new data
+new_output_dir = "./DirectEd-AI-v2"  # Local directory to save the new version
 
-
-# Load the Dataset
-print("Loading dataset...")
-dataset = load_dataset("json", data_files=dataset_path, split="train")
-print("Dataset loaded successfully.")
-
-
-# Load the Base Model & Tokenizer
-print(f"Loading base model: {base_model_name}...")
-
-model = AutoModelForCausalLM.from_pretrained(
+# --- Load Model and Tokenizer ---
+print("Loading base model on CPU...")
+base_model = AutoModelForCausalLM.from_pretrained(
     base_model_name,
-    device_map="auto",
+    device_map="cpu",       # Force CPU
+    torch_dtype=torch.float32,  # Ensure full precision (no fp16/bfloat16)
     trust_remote_code=True,
 )
-model.config.use_cache = False
-print("Base model loaded successfully.")
+
+print(f"Loading adapter: {adapter_model_id}...")
+# Apply your fine-tuned adapter from the Hub
+model = PeftModel.from_pretrained(base_model, adapter_model_id)
 
 tokenizer = AutoTokenizer.from_pretrained(base_model_name, trust_remote_code=True)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"
-print("Tokenizer loaded and configured.")
 
+# --- Load New Data ---
+print(f"Loading new dataset from {new_dataset_path}...")
+new_dataset = load_dataset("json", data_files=new_dataset_path, split="train")
 
-# Configure PEFT
+# --- Continue Training ---
 peft_config = LoraConfig(
+    r=16,
     lora_alpha=16,
     lora_dropout=0.1,
-    r=16,
     bias="none",
     task_type="CAUSAL_LM",
- 
     target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
 )
-print("LoRA configured.")
 
-
-# Define Training Arguments
-training_arguments = TrainingArguments(
-    output_dir=output_dir,
-    num_train_epochs=1,
-    per_device_train_batch_size=2,
-    gradient_accumulation_steps=2,
-    optim="paged_adamw_32bit",
+training_args = TrainingArguments(
+    output_dir=new_output_dir,
+    num_train_epochs=1,  # Increase if dataset is small
+    per_device_train_batch_size=1,  # Keep tiny for CPU
+    gradient_accumulation_steps=4,  # Simulate bigger batch
+    learning_rate=5e-5,  # Slightly lower for stability
     logging_steps=10,
-    learning_rate=2e-4,
-    weight_decay=0.01,
-    fp16=True,
-    max_grad_norm=0.3,
-    max_steps=-1,
-    warmup_ratio=0.03,
-    group_by_length=True,
-    lr_scheduler_type="linear",
+    save_strategy="epoch",
+    optim="adamw_torch",  # CPU-safe optimizer
+    fp16=False,           # Disable mixed precision (CPU only supports fp32)
 )
-print("Training arguments set.")
 
-
-#Initialize and Start Training
 trainer = SFTTrainer(
     model=model,
-    train_dataset=dataset,
+    train_dataset=new_dataset,
     peft_config=peft_config,
     dataset_text_field="text",
-    max_seq_length=2048,
-    tokenizer=tokenizer,
-    args=training_arguments,
+    args=training_args,
 )
-print("Trainer initialized. Starting the fine-tuning process...")
+
+print("Starting continued fine-tuning (CPU, may be slow)...")
 trainer.train()
 print("Training complete.")
 
+# Save the new adapter locally
+trainer.model.save_pretrained(new_output_dir)
+print(f"New model adapter saved to {new_output_dir}")
 
-# Save the Final Model
-trainer.model.save_pretrained(output_dir)
-print(f"Fine-tuned model adapter saved to {output_dir}")
+# Optional: Push to Hugging Face Hub
+# trainer.model.push_to_hub("Nutnell/DirectEd-AI-v2", private=False, commit_message="Continued training on CPU")
