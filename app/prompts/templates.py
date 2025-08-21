@@ -2,6 +2,18 @@
 
 from langchain_core.prompts import ChatPromptTemplate
 
+# Prompt for condensing a question and chat history into a standalone question
+CONDENSE_QUESTION_PROMPT_TEMPLATE = """
+Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+{chat_history}
+
+Follow Up Input: {question}
+Standalone question:"""
+condense_question_prompt = ChatPromptTemplate.from_template(CONDENSE_QUESTION_PROMPT_TEMPLATE)
+
+
 # Prompt for the main RAG (tutoring) chain
 RAG_PROMPT_TEMPLATE = """
 You are a helpful AI assistant for the DirectEd learning platform.
@@ -17,7 +29,6 @@ Question:
 
 Helpful Answer:
 """
-
 rag_prompt = ChatPromptTemplate.from_template(RAG_PROMPT_TEMPLATE)
 
 
@@ -44,5 +55,4 @@ Context:
 
 Quiz Questions:
 """
-
 quiz_generator_prompt = ChatPromptTemplate.from_template(QUIZ_GENERATOR_PROMPT_TEMPLATE)

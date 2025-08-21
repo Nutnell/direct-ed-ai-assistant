@@ -3,8 +3,8 @@
 from fastapi import FastAPI
 from langserve import add_routes
 
-# Import orchestrated router chain
-from app.chains.router import router_chain
+# Importing memory-enabled router chain
+from app.chains.router import router_chain_with_history
 
 # FastAPI App Initialization
 app = FastAPI(
@@ -15,10 +15,10 @@ app = FastAPI(
 
 # LangServe Routes
 
-# expose the unified router_chain at the /chat endpoint
+# final chain at the /chat endpoint
 add_routes(
     app,
-    router_chain,
+    router_chain_with_history,
     path="/chat",
 )
 
