@@ -14,7 +14,7 @@ Standalone question:"""
 condense_question_prompt = ChatPromptTemplate.from_template(CONDENSE_QUESTION_PROMPT_TEMPLATE)
 
 
-# Prompt for the main RAG (tutoring) chain
+# Prompt for the main RAG chain
 RAG_PROMPT_TEMPLATE = """
 You are a helpful AI assistant for the DirectEd learning platform.
 Answer the user's question based only on the following context.

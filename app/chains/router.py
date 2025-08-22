@@ -5,6 +5,7 @@ load_dotenv()
 
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from app.llms.custom import CustomChatModel
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import (
     RunnableBranch,
@@ -29,7 +30,9 @@ vector_store = Chroma(
     persist_directory=VECTOR_STORE_PATH,
     embedding_function=embedding_function
 )
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.1)
+custom_llm = CustomChatModel(api_url="https://nutnell-directed-ai.hf.space/generate")
+openai_llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.1)
+llm = custom_llm.with_fallbacks([openai_llm])
 retriever = vector_store.as_retriever(search_kwargs={"k": 5})
 
 # --- In-Memory Chat History Store ---
@@ -56,7 +59,7 @@ def get_sources_from_docs(docs):
 def run_conversational_rag(input_dict: dict):
     """Encapsulates the conversational RAG logic with error handling."""
     try:
-        # Define the chain logic inside the function
+        # chain logic
         chain = (
             RunnablePassthrough.assign(
                 standalone_question=(
@@ -117,13 +120,13 @@ def run_quiz_generation(input_dict: dict):
         return {"answer": "An unexpected error occurred while generating the quiz.", "sources": []}
 
 
-# --- The Router which functions as our run_educational_assistant() ---
+# The Router run_educational_assistant()
 run_educational_assistant = RunnableBranch(
     (lambda x: x.get("request_type") == "quiz_generation", run_quiz_generation),
     run_conversational_rag,
 )
 
-# Final Chain with Message History Management
+# Chain with Message History Management
 
 educational_assistant_chain = RunnableWithMessageHistory(
     run_educational_assistant,

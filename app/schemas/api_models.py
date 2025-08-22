@@ -26,5 +26,5 @@ class Source(BaseModel):
 
 class ChatOutput(BaseModel):
     answer: str = Field(..., description="The AI-generated answer or content.")
-    # The sources field is now optional
+    # The sources field is optional
     sources: Optional[List[Source]] = Field(None, description="A list of source documents used for the answer.")
